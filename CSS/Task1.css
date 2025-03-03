@@ -1,0 +1,17 @@
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    margin-left: 50%;
+    color: black;
+}
+header{
+    background-color: whitesmoke;
+}
+.neo{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
