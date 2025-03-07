@@ -1,0 +1,21 @@
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #000000;
+    --primary-color: #007bff;
+  }
+  body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: Arial, sans-serif;
+  }
+  button {
+    background-color: var(--primary-color);
+    color: var(--main-bg-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  .dark-theme {
+    --main-bg-color: #121212;
+    --main-text-color: #ffffff;
+    --primary-color: #1e90ff;
+  }

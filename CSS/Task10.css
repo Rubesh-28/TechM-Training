@@ -1,0 +1,31 @@
+body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333; 
+        background-color: #fff; 
+      }
+      .content {
+        margin: 20px;
+      }
+  
+      @media print {
+        nav, .no-print {
+          display: none !important;
+        }
+  
+        body {
+          margin: 0;
+          font-size: 12pt;
+        }
+        .content {
+          margin: 0;
+          padding: 10px;
+        }
+      }
+      button {
+        background-color: #0056b3;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+      }
