@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Button Actions & Mouse Events</title>
+    <style>
+        .like-section{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            height: auto;
+        }
+        .gallery img:hover {
+            border: 3px solid red;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+        }
+        .like-section>button{
+            color: white;
+            background: blue;
+            border-radius: 5px;
+            border: none;
+            width: 70px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <div class="like-section">
+            <img src="https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg?auto=compress&cs=tinysrgb&w=600" id="image1">
+            <button onclick="increment('likeCount1')">Like</button>
+            <span id="likeCount1" class="like-count">0</span>
+        </div>
+
+        <div class="like-section">
+            <img src="https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg?auto=compress&cs=tinysrgb&w=600" id="image2">
+            <button onclick="increment('likeCount2')">Like</button>
+            <span id="likeCount2" class="like-count">0</span>
+        </div>
+    </div>
+
+    <script>
+        // Initialize like counts
+        let likes = 
+        {
+            likeCount1: 0,
+            likeCount2: 0
+        };
+
+        function increment(likeId) {
+            likes[likeId] += 1;
+            document.getElementById(likeId).textContent = likes[likeId];
+        }
+    </script>
+
+</body>
+</html>

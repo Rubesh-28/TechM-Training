@@ -7,7 +7,19 @@
 </head>
 <body>
     <script>
-        let itemPrice=[];
+        const itemPrice =[19.99, 9.99, 4.99];
+        let sum=0;
+        for (i=0;i<itemPrice.length;i++){
+            sum+=itemPrice[i];
+        }
+        let shippingcost=0;
+        if (sum>30){
+            shippingcost=0;
+        }
+        else{
+            shippingcost+=(sum/100)*10;
+        }
+        console.log(sum+shippingcost);
     </script>
 </body>
 </html>

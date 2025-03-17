@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Transformer</title>
+</head>
+<body>
+
+    <label for="userMessage">Enter your message:</label>
+    <input type="text" id="userMessage">
+    <button onclick="processMessage()">Submit</button>
+
+    <p id="output"></p>
+
+    <script>
+        function processMessage() {
+            let message = document.getElementById("userMessage").value.trim();
+            let output = document.getElementById("output");
+            if (message.length === 0) {
+                alert("Please enter a message.");
+                return;
+            }
+            let transformedMessage = (message.length < 10) ? message.toUpperCase() : message.toLowerCase();
+            output.innerHTML = "Transformed Message: " + transformedMessage;
+        }
+    </script>
+
+</body>
+</html>
