@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body{
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        body>h1{
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        form{
+            padding: 20px;
+            width: 300px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 95%;
+            padding: 10px;
+            border: none;
+            color: white;
+            background-color: #007BFF;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input:focus, button:focus 
+        {
+            outline: 2px solid #007BFF;
+            outline-offset: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form action="#" onsubmit="Calculate()">
+        <label>Enter Your Weight(in Kg):</label>
+        <input type="number" id="weight" required>
+        <label>Enter Your Height(in cm):</label>
+        <input type="number" id="height" required>
+        <button type="submit">Check BMI</button>
+    </form>
+    <script>
+        function Calculate()
+        {
+            event.preventDefault();
+            let weight=parseInt(document.getElementById('weight').value);
+            let height=parseInt(document.getElementById('height').value);
+            let res=(weight/((height*0.01)**2)).toFixed(2);
+            if (res<18.5)
+            {
+                alert('You are Underweight,BMI:'+res);
+            }
+            else if (res>18.5 && res<=24.9)
+            {
+                alert('You are Normal,BMI:'+res);
+            }
+            else if (res>=25 && res<=29.9)
+            {
+                alert('You are OveWeight,BMI:'+res);
+            }
+            else
+            {
+                alert('You are Obese,BMI:'+res);
+            }
+            }
+    </script>
+</body>
+</html>
