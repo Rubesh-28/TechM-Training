@@ -2,23 +2,20 @@ import { useState } from "react"
 
 export default function Toggle(){
     const [color,setColor]=useState('black');
-    const [bgcolor,setBgColor]=useState('white');
     function Theme(){
-        if (color === 'black' && bgcolor === 'white'){
+        if (color === 'black'){
             setColor('white');
-            setBgColor('black');
+            document.documentElement.style.backgroundColor = "black"; 
         }
         else{
             setColor('black');
-            setBgColor('white');
+            document.documentElement.style.backgroundColor = "white"; 
         }
     }
     return (
         <>
-        <div style={{backgroundColor:bgcolor}}>
         <h1 style={{color:color}}>Hello World!</h1>
-        <button onClick={Theme}>Click to toggle theme!</button>
-        </div>
+        <button onClick={Theme}>Click to toggle theme!</button><br />
         </>
     )
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks Control</title>
+</head>
+<body>
+    <script>
+        const tasks = 
+        [
+            { name: "Submit project report", isCompleted: false, dueDate: "2025-03-15" },
+            { name: "Review Java concepts", isCompleted: true, dueDate: "2025-03-10" },
+            { name: "Complete SQL exercises", isCompleted: false, dueDate: "2025-03-18" },
+            { name: "Prepare for HR interview", isCompleted: true, dueDate: "2025-03-05" },
+            { name: "Attend AI webinar", isCompleted: false, dueDate: "2025-03-20" },
+        ];
+        function IncompleteTasks(taskList) 
+        {
+            return taskList.filter(task => !task.isCompleted);
+        }
+        const today = new Date().toISOString().split("T")[0];
+
+        tasks.forEach(
+            function(task) 
+        {
+            if (task.dueDate < today && !task.isCompleted) 
+            {
+                task.name = `[Overdue] ${task.name}`;
+            }
+        }
+        );
+
+        const countCompletedTasks = taskList=>taskList.filter(task => task.isCompleted).length;
+        
+        console.log("Incomplete Tasks:", IncompleteTasks(tasks));
+        console.log("Total Completed Tasks:", countCompletedTasks(tasks));
+        console.log("All Tasks:", tasks);
+    </script>
+</body>
+</html>
