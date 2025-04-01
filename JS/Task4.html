@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const isLoggedIn = true;
+        const membershipLevel = "Gold";
+        const coupon = false;
+
+        const discount = isLoggedIn && membershipLevel === "Gold" ? 20 : 10;
+
+        if (!coupon) {
+            console.log("Coupon is invalid. Discount applied based on membership.");
+        }
+        console.log(`Final discount: ${discount}%`);
+</script>
+</body>
+</html>
