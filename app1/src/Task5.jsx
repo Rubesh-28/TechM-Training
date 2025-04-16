@@ -13,15 +13,16 @@ const Button = ({ label }) => {
   return (<button>{label}</button>);
 };
 
-const UserProfile = ({ user }) => {
+export function UserProfile({ name = 'Guest', email = 'N/A', age = 'N/A' }) {
   return (
-    <>
-      <h2>{user.name}</h2>
-      <p>Email: {user.email}</p>
-      <p>Age: {user.age}</p>
-    </>
+    <div>
+      <h1>User Profile</h1>
+      <p>Name: {name}</p>
+      <p>Email: {email}</p>
+      <p>Age: {age}</p>
+    </div>
   );
-};
+}
 
 const Modal = ({ title, content }) => {
   return (
@@ -33,4 +34,4 @@ const Modal = ({ title, content }) => {
 };
 
 
-export {Movie,Button,UserProfile,Modal}
+export {Movie,Button,Modal}

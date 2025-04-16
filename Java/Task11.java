@@ -41,4 +41,3 @@ public class Task11 {
         highSalaryEmployees.forEach(System.out::println);
     }
 }
-

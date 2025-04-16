@@ -1,14 +1,14 @@
 import React from 'react';
 
-function List({ items }) {
-    return (
-        <>
-            {items.map((item, index) => (
-                <p key={index}>{item}</p>
-            ))}
-        </>
-    );
-}
+const List = ({ items = [] }) => {
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+};
 
 function TodoList() {
     const tasks = ['Complete Report'];
@@ -70,4 +70,4 @@ function ShoppingCart(){
       </>)
 }
 
-export { List, TodoList ,ProductList,UserList,ShoppingCart};
+export { List, TodoList ,ProductList,UserList,ShoppingCart };

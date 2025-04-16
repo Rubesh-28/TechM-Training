@@ -1,21 +1,32 @@
-import { useState } from "react"
+import React, { useState } from 'react';
 
-export default function Toggle(){
-    const [color,setColor]=useState('black');
-    function Theme(){
-        if (color === 'black'){
-            setColor('white');
-            document.documentElement.style.backgroundColor = "black"; 
-        }
-        else{
-            setColor('black');
-            document.documentElement.style.backgroundColor = "white"; 
-        }
+function Toggle() {
+  const [color, setColor] = useState('black');
+  const [isToggled, setIsToggled] = useState(false);
+
+  const Theme = () => {
+    if (color === 'black') {
+      setColor('white');
+      document.documentElement.style.backgroundColor = 'black';
+    } else {
+      setColor('black');
+      document.documentElement.style.backgroundColor = 'white';
     }
-    return (
-        <>
-        <h1 style={{color:color}}>Hello World!</h1>
-        <button onClick={Theme}>Click to toggle theme!</button><br />
-        </>
-    )
+  };
+
+  const handleToggle = () => {
+    setIsToggled((prev) => !prev);
+  };
+
+  return (
+    <div>
+      <h1 style={{ color: color }}>Hello World!</h1>
+      <button onClick={Theme}>Click to toggle theme!</button>
+      <br />
+      <p>Toggle is {isToggled ? 'ON' : 'OFF'}</p>
+      <button onClick={handleToggle}>Toggle</button>
+    </div>
+  );
 }
+
+export default Toggle;
